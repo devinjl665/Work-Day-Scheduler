@@ -22,11 +22,11 @@ $(function () {
     // TODO: Add code to display the current date in the header of the page.
   });
 
-  //Declaring variables
+//Declaring variables
 
 var today = dayjs();
 
-var calendarContainer = $('#calendarContainer');
+var calendarContainer = $('#calendar-container');
 
 displayDate();
 displayInput();
@@ -88,16 +88,29 @@ function displayInput(){
     var button = $('<button>');
     button.addClass('btn saveBtn col-2 col-md-1');
     button.attr('aria-label', 'save');
-    button.attr('id', 'button-hour-' + hour); // set id for each button (to use later)
-    // create i element for button
+    button.attr('id', 'button-hour-' + hour);
+    
     var i = $('<i>');
     i.addClass('fas fa-save');
     i.attr('aria-hidden', 'true');
-    button.append(i); // append i to button
-    hourBlock.append(button); // put the button inthe element
+    button.append(i);
+    hourBlock.append(button);
 
     calendarContainer.append(hourBlock); 
 
-    hour ++; // go to next hour
+    hour ++;
+  }
+}
+
+function displayTask(){
+  var hour = 9;
+
+  while (hour < 18){
+    var task = localStorage.getItem('workSchedule' + hour);
+
+    var input = $('#input-hour-' + hour);
+    input.val(task);
+
+    hour++
   }
 }
