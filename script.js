@@ -28,12 +28,12 @@ function displayInput() {
   var hour = 9;
 
   while (hour < 18) {
-    // Create a container for each hour block
+    // Creates a container for each hour block
     var hourBlock = $('<div>');
     hourBlock.addClass('row time-block past');
     hourBlock.attr('id', 'hour-' + hour);
 
-    // Create a div for displaying the hour
+    // Creates a div for displaying the hour
     var hourDisplay = $('<div>');
     hourDisplay.addClass('col-2 col md-1 hour text-center py-3');
 
@@ -46,12 +46,12 @@ function displayInput() {
       hourDisplay.text(hour - 12 + ' PM');
     }
 
-    // Append the hour display to the hour block
+    // Appends the hour display to the hour block
     hourBlock.append(hourDisplay);
 
-    // Create a textarea for user input
+    // Creates a textarea for user input
     var input = $('<textarea>');
-    input.addClass('col-8 col-md-10 description');
+    input.addClass('col-8 col md-10 description');
     input.attr('rows', '3');
     input.attr('id', 'input-hour-' + hour);
 
@@ -65,27 +65,27 @@ function displayInput() {
       input.addClass('future');
     }
 
-    // Append the input to the hour block
+    // Appends the input to the hour block
     hourBlock.append(input);
 
-    // Create a button for saving
+    // Creates a button for saving text
     var button = $('<button>');
-    button.addClass('btn saveBtn col-2 col-md-1');
+    button.addClass('btn saveBtn col-2 col md-1');
     button.attr('aria-label', 'save');
     button.attr('id', 'button-hour-' + hour);
 
-    // Create an icon for the button
+    // Creates an icon for the button
     var i = $('<i>');
     i.addClass('fas fa-save');
     i.attr('aria-hidden', 'true');
 
-    // Append the icon to the button
+    // Appends the icon to the button
     button.append(i);
 
-    // Append the button to the hour block
+    // Appends the button to the hour block
     hourBlock.append(button);
 
-    // Append the hour block to the calendar container
+    // Appends the hour block to the calendar container
     calendarContainer.append(hourBlock);
 
     // Increment the hour for the next iteration
@@ -98,10 +98,10 @@ function displayTask() {
   var hour = 9;
 
   while (hour < 18) {
-    // Retrieve task from local storage based on the hour
+    // Retrieves a task from local storage based on the hour
     var task = localStorage.getItem('workSchedule' + hour);
 
-    // Set the value of the corresponding textarea
+    // Sets the value of the corresponding textarea
     var input = $('#input-hour-' + hour);
     input.val(task);
 
@@ -112,12 +112,12 @@ function displayTask() {
 
 // Function to handle button click events
 function buttonClickEvent() {
-  // Extract the hour from the button's ID using regex
+  // Extracts the hour from the button's ID using regex
   var hour = $(this).attr('id').match(/\d+/g);
 
-  // Retrieve the task from the corresponding textarea
+  // Retrieves the task from the corresponding textarea
   var task = $(this).parent().children('textarea').val();
 
-  // Store the task in local storage with a key that includes the hour
+  // Stores the task in local storage with a key that includes the hour
   localStorage.setItem('workSchedule' + hour, task);
 }
