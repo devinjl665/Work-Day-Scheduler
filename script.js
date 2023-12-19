@@ -35,7 +35,7 @@ function displayInput() {
 
     // Creates a div for displaying the hour
     var hourDisplay = $('<div>');
-    hourDisplay.addClass('col-2 col md-1 hour text-center py-3');
+    hourDisplay.addClass('col-2 col-md-1 hour text-center py-3');
 
     // Set the text content of the hour display
     if (hour < 12) {
@@ -51,7 +51,7 @@ function displayInput() {
 
     // Creates a textarea for user input
     var input = $('<textarea>');
-    input.addClass('col-8 col md-10 description');
+    input.addClass('col-8 col-md-10 description');
     input.attr('rows', '3');
     input.attr('id', 'input-hour-' + hour);
 
@@ -70,7 +70,7 @@ function displayInput() {
 
     // Creates a button for saving text
     var button = $('<button>');
-    button.addClass('btn saveBtn col-2 col md-1');
+    button.addClass('btn saveBtn col-2 col-md-1');
     button.attr('aria-label', 'save');
     button.attr('id', 'button-hour-' + hour);
 

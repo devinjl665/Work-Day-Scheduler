@@ -1,4 +1,5 @@
 # Work-Day-Scheduler
+
 Create a simple calendar application that allows a user to save events for each hour of a typical working day (9am–5pm) by modifying starter code.
 
 ## Description
@@ -11,15 +12,15 @@ Create a simple calendar application that allows a user to save events for each 
 
 ## Site Link
 
-
+https://devinjl665.github.io/Work-Day-Scheduler/
 
 ## Usage
 
-
+This work day scheduler allows you to input tasks in the input fields by the hour. The blue, floppy disk icon button will allow the data entered into the input field to be saved to the local storage. Hours that have passed will display a gray input field, the current hour will have a red input field, and future hours will have a green input field
 
 ## Credits
 
-
+The starter code was provided by Wash U Coding Bootcamp. jQuery and Day.js were the third-party APIs used to dynamically update the html.
 
 ## User Story
 
